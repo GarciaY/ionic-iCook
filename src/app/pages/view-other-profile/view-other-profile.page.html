@@ -1,0 +1,130 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">      
+      <!-- <ion-menu-button fill="clear" color="danger">
+        <ion-icon name="options-outline"></ion-icon>
+      </ion-menu-button> -->
+      <!-- <ion-button fill="clear" color="dark">
+        <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button> -->
+      <ion-button fill="solid" shape="round" color="light" routerLink="/details">
+        <ion-icon slot="icon-only" name="arrow-back" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" class="thumbnail">
+        <ion-fab vertical="bottom" horizontal="right">
+          <ion-fab-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <ion-thumbnail>
+          <img src="assets/images/2.jpg" />
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label>
+          <strong>81</strong>
+          <p>
+            <ion-text color="medium">Posts</ion-text>
+          </p>
+        </ion-label>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+        <ion-label>
+          <strong>23.6K</strong>
+          <p>
+            <ion-text color="medium">Likes</ion-text>
+          </p>
+        </ion-label>
+      </ion-col>
+      <!-- <ion-col size="3" class="ion-text-center">
+        <ion-label>
+          <strong>488</strong>
+          <p>
+            <ion-text color="medium">Following</ion-text>
+          </p>
+        </ion-label>
+      </ion-col> -->
+    </ion-row>
+    <ion-row class="marginTop">
+      <ion-col>
+        <ion-label>
+          Mel Dela Cruz
+          <ion-text color="medium" class="ion-margin-start info">Master Programmer</ion-text>
+          <ion-row>
+            <ion-text color="medium" class="ion-text-justify description">
+              Like to code for my project the plantiThumb for my future - Experienced Programmer.
+            </ion-text>
+          </ion-row>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Settings button -->
+    <!-- <ion-row class="marginTop">
+
+      <ion-col size="4">
+        <ion-button mode="ios" expand="block" size="small" fill="outline" color="medium" routerLink="/add-post">
+          <ion-text color="dark">Add Recipe</ion-text>
+        </ion-button>      
+      </ion-col>
+   
+      <ion-col size="4">
+        <ion-button mode="ios" expand="block" size="small" fill="outline" color="medium" routerLink="/profile">
+          <ion-text color="dark">Edit Profile</ion-text>
+        </ion-button>      
+      </ion-col>
+    </ion-row> -->
+<ion-text align="center">
+  <h4>Posts</h4>
+</ion-text>
+   
+<!-- ion segment button-->
+    <ion-row class="images" (ionChange)="buttonsChanged($event)">
+      <ion-segment mode="md" [value]="buttonValue">
+        <ion-segment-button [value]="item?.value" *ngFor="let item of buttonItems"> 
+          <ion-icon [name]="buttonValue == item?.value ? item?.icon : item?.icon + '-outline'" color="danger"></ion-icon>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>    
+  </ion-grid>
+
+  <div [ngSwitch]="buttonValue">
+    <ion-list lines="none" *ngSwitchCase="'grid'" class="photo-grid">
+      <div *ngFor="let item of posts; let i = index">
+        <ion-grid *ngIf="i%3 == 0" class="noPadding">
+          <ion-row *ngIf="i%9 == 0">
+            <ion-col size="8">
+              <div class="image-container image-container1" [style.background-image]="'url(' + item?.url + ')'" routerLink="/details"></div>
+            </ion-col>
+            <ion-col size="4">
+              <div *ngIf="posts[i + 1]" class="image-container ct1" [style.background-image]="'url(' + posts[i + 1]?.url + ')'" routerLink="/details"></div>
+              <div *ngIf="posts[i + 2]" class="image-container ct2" [style.background-image]="'url(' + posts[i + 2]?.url + ')'" routerLink="/details"></div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="i%9 > 2">
+            <ion-col size="4">
+              <div class="image-container" [style.background-image]="'url(' + item?.url + ')'" routerLink="/details"></div>
+            </ion-col>
+            <ion-col size="4">
+              <div *ngIf="posts[i + 1]" class="image-container" [style.background-image]="'url(' + posts[i + 1]?.url + ')'" routerLink="/details"></div>
+            </ion-col>
+            <ion-col size="4">
+              <div *ngIf="posts[i + 2]" class="image-container" [style.background-image]="'url(' + posts[i + 2]?.url + ')'" routerLink="/details"></div>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </div>
+    </ion-list>
+  </div>
+
+</ion-content>

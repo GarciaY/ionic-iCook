@@ -1,0 +1,15 @@
+ion-content{
+    --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url("/assets/images/bg.jpg") no-repeat center center / cover;
+}
+
+ion-checkbox{
+    --checkmark-color: #F6412D;
+    --background-checked: white;
+    --border-color: gray;
+    --border-color-checked: #F6412D;
+}
+
+.notice{
+    background-color: gray!important;
+}

@@ -1,0 +1,202 @@
+
+    <ion-content scrollEvents="true" [appHideHeader]="hideheader" (ionScroll)="onScroll($event)">
+
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+      <ion-row class="info-row" #hideheader>
+          <!-- LOGO -->
+        <ion-col  align="center">
+          <img src="/assets/images/iCook_logo.png">
+        </ion-col>
+      </ion-row>
+
+  
+
+      <ion-row class="sticky-row">
+       <!-- Side Menu Button -->
+      <ion-col size="2">
+        <!--menu="main-menu"-->
+          <ion-menu-button  >
+            <ion-icon name="options-outline" color="danger"></ion-icon>
+          </ion-menu-button>
+      </ion-col>
+        
+      <!-- Search Bar -->
+        <ion-col size="8">
+          <ion-searchbar placeholder="Search Dishes"></ion-searchbar>
+        </ion-col>
+
+         <!-- Profile icon Button-->
+         <ion-col size="2" class="ion-padding-top">
+          <ion-button fill="clear" routerLink="/profile" >
+            <ion-icon name="person-outline" slot="icon-only" color="danger"></ion-icon>
+          </ion-button>
+        </ion-col> 
+
+      </ion-row>
+    <!-- Categories slides  *ngFor="let cat of categories" -->
+      <ion-slides [options]="catSlideOpts">
+        <ion-slide >
+          <img src="assets/images/categories/c2.png">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/categories/c3.png">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/categories/c4.png">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/categories/c5.png">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/categories/c6.png">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/categories/c7.png">
+        </ion-slide>
+      </ion-slides>
+    <!-- Advertisements/Highlights slides *ngFor="let h of highlights" -->
+      <ion-slides [options]="highlightSlideOpts">
+        <ion-slide >
+          <img src="assets/images/highlights/h1.jpg">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/highlights/h2.png">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/highlights/h3.jpg">
+        </ion-slide>
+        <ion-slide >
+          <img src="assets/images/highlights/h4.jpg">
+        </ion-slide>
+      </ion-slides>
+    
+      <ion-text color="dark"><b style="padding-left: 10px;">Featured</b></ion-text>
+
+      <!-- Featured Slides *ngFor="let f of featured"-->
+      <ion-slides [options]="featuredSlideOpts">
+        <ion-slide  class="featured-slide" 
+        routerLink="/details">
+        <img src="assets/images/food/f1.jpeg">
+
+        <div class="info">
+          <ion-text color="dark"><b>Yuri food title</b></ion-text>
+          <span>
+            <ion-icon name="star" color="secondary"></ion-icon>
+            <ion-text color="secondary"> 4.5 Excellent </ion-text> (500+)
+          </span>
+        </div>
+        
+        </ion-slide>
+
+        <ion-slide  class="featured-slide" 
+        routerLink="/details">
+        <img src="assets/images/food/f2.jpeg">
+
+        <div class="info">
+          <ion-text color="dark"><b>Yuri food title 2</b></ion-text>
+          <span>
+            <ion-icon name="star" color="secondary"></ion-icon>
+            <ion-text color="secondary"> 4.5 Excellent </ion-text> (500+)
+          </span>
+        </div>
+        
+        </ion-slide>
+      </ion-slides>
+
+      <!-- User posts -->
+      <ion-text color="dark"><b style="padding-left: 10px;">Your Feed</b></ion-text>
+      <ion-slides >
+        <ion-slide  class="featured-slide" 
+        routerLink="/details">
+        <img src="assets/images/food/f1.jpeg">
+
+        <div class="info">
+          <ion-text color="dark"><b>Yuri food title </b></ion-text>
+          <span>
+            <ion-icon name="star" color="secondary"></ion-icon>
+            <ion-text color="secondary"> 4.5 Excellent </ion-text> (500+)
+          </span>
+          <span>
+            <ion-chip>
+              <ion-avatar>
+                <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+              </ion-avatar>
+              <ion-label>By Mel Mark</ion-label>
+            </ion-chip>
+            <!-- <ion-icon name="location-outline"></ion-icon> 0.7 miles away -->
+          </span>
+        </div>
+        
+        </ion-slide>
+      </ion-slides>
+
+      <ion-slides >
+        <ion-slide  class="featured-slide" 
+        routerLink="/details">
+        <img src="assets/images/food/f2.jpeg">
+
+        <div class="info">
+          <ion-text color="dark"><b>Yuri food title 2 </b></ion-text>
+          <span>
+            <ion-icon name="star" color="secondary"></ion-icon>
+            <ion-text color="secondary"> 4.5 Excellent </ion-text> (500+)
+          </span>
+          <ion-chip>
+            <ion-avatar>
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>By JohnBryan01</ion-label>
+          </ion-chip>
+        </div>
+        
+        </ion-slide>
+      </ion-slides>
+
+      <ion-slides >
+        <ion-slide  class="featured-slide" 
+        routerLink="/details">
+        <img src="assets/images/food/f1.jpeg">
+
+        <div class="info">
+          <ion-text color="dark"><b>Yuri food title 3 </b></ion-text>
+          <span>
+            <ion-icon name="star" color="secondary"></ion-icon>
+            <ion-text color="secondary"> 4.5 Excellent </ion-text> (500+)
+          </span>
+          <ion-chip>
+            <ion-avatar>
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>By BhokcxsNeo</ion-label>
+          </ion-chip>
+        </div>
+        
+        </ion-slide>
+      </ion-slides>
+
+      <ion-slides >
+        <ion-slide  class="featured-slide" 
+        routerLink="/details">
+        <img src="assets/images/food/f2.jpeg">
+
+        <div class="info">
+          <ion-text color="dark"><b>Yuri food title 4 </b></ion-text>
+          <span>
+            <ion-icon name="star" color="secondary"></ion-icon>
+            <ion-text color="secondary"> 4.5 Excellent </ion-text> (500+)
+          </span>
+          <ion-chip>
+            <ion-avatar>
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-label>By YuriG</ion-label>
+          </ion-chip>
+        </div>
+        
+        </ion-slide>
+      </ion-slides>
+    </ion-content>
+ 

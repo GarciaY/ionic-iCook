@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-button fill="solid" shape="round" color="light" routerLink="/user-posts">
+        <ion-icon slot="icon-only" name="arrow-back" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">POST</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  
+</ion-header>
+
+
+<ion-content [fullscreen]="true" scrollEvents="true" [appParallax]="img">
+  <!-- [style.background-image]="'url(assets/images/add_image.png)'" -->
+  <div #img class="header-image" >
+    <ion-img src="assets/images/add_image.png" class="image"></ion-img>
+    <div class="middle">
+      <div class="text">Add image</div>
+    </div>
+  </div>
+
+
+  <div>
+    <ion-row>
+      <ion-col size="12" class="light-bg ion-padding-start">
+       
+        <ion-col size="12" class="light-bg">
+          <h4>Food Name</h4>
+        </ion-col>
+        <ion-col size="12" class="ion-no-padding">  
+          <ion-item lines="full">   
+            <ion-textarea class="ion-text-wrap" placeholder="Enter food name here..."></ion-textarea>
+          </ion-item>
+         
+  
+        </ion-col>
+        
+
+         <ion-list>
+           <!--Cooking time-->
+           <ion-item lines="none">
+            
+            <ion-label position="floating">
+             <ion-grid>
+               <ion-row>
+                <ion-icon name="time"></ion-icon>
+                <h2>Cooking time</h2>
+               </ion-row>
+             </ion-grid>
+            </ion-label>
+            <ion-input type="number" min="1" max="200"></ion-input>
+           </ion-item>
+           
+          <ion-item>
+            <ion-range min="1" max="200" step="1" pin="true" color="warning">
+              <ion-label slot="start">0 mins</ion-label>
+            <ion-label slot="end">200 mins</ion-label>  
+              <!-- <ion-icon size="small" slot="start" name="time"></ion-icon>
+              <ion-icon slot="end" name="time"></ion-icon> -->
+            </ion-range>
+          </ion-item>
+          
+      <!--Servings-->
+      <ion-item lines="none">
+            
+        <ion-label position="floating">
+         <ion-grid>
+           <ion-row>
+            <ion-icon name="restaurant"></ion-icon>
+            <h2>Servings</h2>
+           </ion-row>
+         </ion-grid>
+        </ion-label>
+        <ion-input type="number" min="1" max="20"></ion-input>
+       </ion-item>
+          <ion-item >
+            <ion-range pin="true" min="1" max="20" step="1" snaps="true" color="secondary">
+              <!-- <ion-icon size="small" slot="start" name="restaurant"></ion-icon>
+              <ion-icon slot="end" name="restaurant"></ion-icon> -->
+            </ion-range>
+          </ion-item>
+      
+           <!--Calories COunt-->
+           <ion-item lines="none">
+            
+            <ion-label position="floating">
+             <ion-grid>
+               <ion-row>
+                <ion-icon name="flame"></ion-icon>
+                <h2>Calorie count</h2>
+               </ion-row>
+             </ion-grid>
+            </ion-label>
+            <ion-input type="number" min="0" max="1000"></ion-input>
+           </ion-item>
+          <ion-item>
+            <ion-range color="danger" pin="true" min="0" max="1000">
+              <ion-icon size="small" slot="start" name="flame"></ion-icon>
+              <ion-icon slot="end" name="flame"></ion-icon>
+            </ion-range>
+          </ion-item>
+      
+        </ion-list>
+      </ion-col>
+
+      <ion-col size="12" class="light-bg">
+        <h4>Description</h4>
+      </ion-col>
+      <ion-col size="12" class="ion-no-padding">  
+        <ion-item lines="full">   
+          <ion-textarea class="ion-text-wrap" placeholder="Enter a description here..."></ion-textarea>
+        </ion-item>
+       
+
+      </ion-col>
+
+       
+      
+
+      <ion-col class="light-bg">
+        <h4>Procedures</h4>
+        <ion-list>
+          <ion-item lines="full"> 
+            <ion-label position="stacked">Enter Procedures:</ion-label>
+            <ion-input placeholder="Procedure 1"></ion-input>
+            <ion-input placeholder="Procedure 2"></ion-input>
+            <ion-input placeholder="Procedure 3"></ion-input>
+            <ion-input placeholder="Procedure 4"></ion-input>
+            <ion-input placeholder="Procedure 5"></ion-input>
+          </ion-item>
+        </ion-list>
+        
+      </ion-col>
+
+      
+
+    
+    </ion-row>
+  </div>
+
+ 
+
+</ion-content>

@@ -1,0 +1,41 @@
+.header-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 30vh;
+    will-change: transform;
+  }
+  
+  ion-badge{
+    margin: 7px;
+    color: white;
+    --background: #FF9800;
+  }
+  
+  ion-content {
+    position: absolute;
+    --background: #f1f1f1;
+    --padding-bottom: 50px;
+  }
+  
+  ion-toolbar {
+    ion-icon {
+      font-size: 22px;
+    }
+  }
+  
+  .light-bg {
+      background: #ffffff;
+      // z-index: 1000;
+  }
+  
+  
+  .border-bottom {
+      border-bottom: 1px solid var(--ion-color-step-150, rgba(0, 0, 0, 0.07));
+  }
+  
+  
+  h4 {
+      font-weight: bold;
+      padding-left: 15px;
+  }
