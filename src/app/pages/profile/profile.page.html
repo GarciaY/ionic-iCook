@@ -25,7 +25,7 @@
   </ion-grid>
 
 
-  <ion-list lines="full">
+  <!-- <ion-list lines="full">
     <ion-item>
       <ion-icon name="person-outline" class="ion-padding"></ion-icon>
       <ion-label>
@@ -77,8 +77,20 @@
     </ion-item>
   </ion-list>
 <div align="center">
-  <ion-button class="edit-button" fill="outline" class="button ion-margin">Edit Profile</ion-button>
-</div>
+  <ion-button class="edit-button" fill="outline" class="button ion-margin" >Edit Profile</ion-button>
+</div> -->
 
+
+<div class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let value of values" button (click)="openModal(value)" detail>
+      <ion-icon [name]="value.icon + '-outline'" class="ion-padding"></ion-icon>
+      <ion-label>
+        <ion-text>Change {{value.label}}</ion-text>
+        <p><ion-text color="dark" class="ion-text-wrap">{{value.NumVal | number}} {{value.TextVal}}</ion-text></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>
 
 </ion-content>
