@@ -20,7 +20,7 @@ export class ProfilePage implements OnInit {
     },
     {
       label: 'Phone Number',
-      NumVal: 999999999,
+      TextVal: '09120909090',
       icon: 'call'
       //TextVal
     },
