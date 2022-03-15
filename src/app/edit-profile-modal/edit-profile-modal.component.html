@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-item>
+  <!-- <ion-item>
     <ion-label position="floating">New {{label}}</ion-label>
    <ion-input type="number" [formControl]="NumValInput"></ion-input>
 
@@ -27,5 +27,67 @@
   <ion-button [disabled]="NumValInput.invalid"
   [disabled]="TextValInput.invalid"
   expand="block" (click)="onEdit()" class="ion-margin-top"
-  color="dark" fill="outline">Edit</ion-button> 
+  color="dark" fill="outline">Edit</ion-button>  -->
+  
+<div class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <ion-text>Current Name</ion-text>
+        <p>Yuri Garcia</p>
+        <ion-input color="dark" class="ion-text-wrap" placeholder="New Name"></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>Phone Number</ion-text>
+        <p>0912650829</p>
+        <ion-input color="dark" class="ion-text-wrap" type="number" placeholder="New Phone Number"></ion-input>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>
+        <ion-text>Email</ion-text>
+        <p>yuri@gmail.com</p>
+        <ion-input color="dark" class="ion-text-wrap" type="email" placeholder="email"></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>Current Age</ion-text>
+        <p>21</p>
+        <ion-input color="dark" class="ion-text-wrap" type="number" placeholder="New age"></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>Current Bio</ion-text>
+        <p>Greatest Chef</p>
+        <ion-input color="dark" class="ion-text-wrap" placeholder="New Bio"></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>Profile Description</ion-text>
+        <p>Like to Cook for my family and specially for my girlfriend - Experienced Cook.</p>
+        <ion-input color="dark" class="ion-text-wrap" placeholder="New Profile Description"></ion-input>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>Password</ion-text>
+        <ion-input color="dark" class="ion-text-wrap" type="password" placeholder="New Password"></ion-input>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>
+  <ion-button 
+  expand="block"  class="ion-margin-top"
+  color="dark" fill="outline" >Edit</ion-button> 
 </ion-content>

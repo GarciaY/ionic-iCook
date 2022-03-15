@@ -22,7 +22,7 @@ export class ProfilePage implements OnInit {
       label: 'Phone Number',
       TextVal: '09120909090',
       icon: 'call'
-      //TextVal
+    
     },
     {
       label: 'Email',

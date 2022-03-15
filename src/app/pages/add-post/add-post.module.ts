@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,9 +13,11 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     AddPostPageRoutingModule,
-    SharedDirectivesModule
+    SharedDirectivesModule,
+
   ],
   declarations: [AddPostPage]
 })
