@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController  } from '@ionic/angular';
+
 @Component({
   selector: 'app-edit-profile-modal',
   templateUrl: './edit-profile-modal.component.html',
@@ -13,7 +14,15 @@ export class EditProfileModalComponent {
   @Input() TextVal: string;
   NumValInput = new FormControl ('', Validators.required)
   TextValInput = new FormControl ('',Validators.required)
-  constructor(private modalCtrl: ModalController) { }
+  constructor(private modalCtrl: ModalController, private toastCtrl: ToastController) { }
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: 'Your settings have been saved.',
+      duration: 2000
+    });
+    toast.present();
+  }
 
   dismissModal(){
     this.modalCtrl.dismiss(null, 'cancel');

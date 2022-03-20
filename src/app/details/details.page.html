@@ -184,6 +184,11 @@
     <ion-row class="ion-padding meal-row">
       <ion-col  class="border-bottom">
         <ion-item lines="none" >
+          <ion-buttons slot="end">
+          <ion-button (click)="presentPopover($event)">
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+            </ion-button>
+         </ion-buttons>
           <ion-avatar slot="start" routerLink="/view-other-profile">
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
           </ion-avatar>
